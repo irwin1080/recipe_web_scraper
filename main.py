@@ -5,12 +5,14 @@ Purpose: Personal Project
 Author: Irwin Dominguez
 '''
 #import necessary modules
+#to make get requests to desired websites
 import requests
+#to convert request data into text
 import bs4
-
-print("hello")
-
-
 website_url = input("What recipe would you like to extract? ")
-print("goddby")
 print(website_url)
+
+website_data = requests.get(website_url)
+print(website_data)
+
+soup = bs4.
