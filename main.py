@@ -14,5 +14,3 @@ print(website_url)
 
 website_data = requests.get(website_url)
 print(website_data)
-
-soup = bs4.
