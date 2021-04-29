@@ -40,25 +40,32 @@ def createRecipeOliveMagazine(formatted_html):
 
     #Olive Magazine - get title
     data_point = soup.select(".heading-1.template-article__title.template-article__title--image-led")
-    for data in data_point:
-        print(data.getText())
+    print(data_point[0].getText())
+    print("")
 
     #Olive Magazine - get serving
     data_point = soup.select(".heading-6.recipe-key-data__text")
     print(data_point[1].getText())
-
+    print("")
 
     #Olive Magazine - get items, get amount
+    print("Ingredients")
     data_point = soup.select(".list-group__item")
     for data in data_point:
-        print(data.getText())
+        #get text
+        data_text = data.getText()
+        #get text prior to any commas
+        data_text_split = data_text.split(',')[0]
+        #print text and strip any whitespace
+        print(data_text_split.strip())
+        print("")
 
-
-    print("")
     #Olive Magazine - get instructions
+    print("Instructions")
     data_point = soup.select(".editor-content")
     for data in data_point:
-        print(data.getText())
+        print(data.getText().strip())
+        print("")
 
 #function for Food&Wine site. Print out key recipe items.
 def createRecipeFoodAndWine(formatted_html):
